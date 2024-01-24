@@ -1,0 +1,50 @@
+#include <iostream>
+#include <stdio.h>
+#include <map>
+ 
+#define ll long long int
+ 
+using namespace std;
+ 
+ 
+int main()
+{
+   
+   
+   int N, m;
+   scanf("%d %d", &N, &m);
+   ll arboles[N];  
+   for(int i = 0; i < N; i++) {
+        scanf("%lld", &arboles[i]);  
+    }
+   
+       
+   ll sierra = 0;
+   for (int i = 0; i < N; i++)
+   {
+       sierra = std::max( sierra, arboles[i]);
+   }      
+         
+   ll total_madera = 0;
+ 
+   while (true)
+   {
+       total_madera = 0;
+       for (int i = 0; i < N; i++) {
+           if (arboles[i] > sierra) {
+               total_madera += arboles[i] - sierra;
+           }
+       }
+ 
+       if (total_madera >= m) {
+           break;
+       }
+       sierra--;
+   }
+   
+   printf("%lld\n", sierra);
+   
+  //  system("pause");
+   
+    return 0;
+}
