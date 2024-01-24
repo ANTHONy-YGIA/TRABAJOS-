@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication25
+{
+    class Program
+    {
+
+
+
+        static void Main(string[] args)
+        {
+
+            int cont = 0;
+            for (int i = 0; i < 10; i++)
+            {
+                int id = int.Parse(Console.ReadLine().Trim());
+                int edad = int.Parse(Console.ReadLine().Trim());
+                int suledo = int.Parse(Console.ReadLine().Trim());
+
+                if (edad > 35 && suledo >= 5000 && suledo <= 7500)
+                {
+                    cont++;
+                }
+
+            }
+
+            Console.WriteLine(cont);
+
+            Console.ReadLine();
+
+        }
+
+    }
+}
