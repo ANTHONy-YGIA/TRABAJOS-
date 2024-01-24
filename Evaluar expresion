@@ -1,0 +1,86 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+class Principal
+{
+
+
+    static string EvaluarParentesis(string s)
+    {
+        string ap = "<({[";
+        string ci = ">)}]";
+
+        Dictionary<char, char> dic = new Dictionary<char, char>();
+        for (int i = 0; i < ap.Length; i++)
+        {
+            dic[ap[i]] = ci[i];
+        }
+
+
+        Stack<char> stack = new Stack<char>();
+        int cambios = 0;
+        for (int i = 0; i < s.Length; i++)
+        {
+            if (ap.Contains(s[i]))
+            {
+                stack.Push(s[i]);
+            }
+            else if (ci.Contains(s[i]))
+            {
+                if (stack.Count == 0)
+                {
+                    //Console.WriteLine("imposible");
+                    //break;
+                    return "imposible";
+                }
+                char ab = stack.Pop();
+
+                if (dic[ab] != s[i])
+                {
+                    cambios++;
+                }
+
+            }
+        }
+
+
+        if (stack.Count > 0)
+        {
+            //Console.WriteLine("imposible");
+            return "imposible";
+        }
+        //else
+        //{
+        //    Console.WriteLine(cambios);
+        //}
+        return cambios.ToString();
+
+    }
+
+    static void Main(string[] args)
+    {
+
+        //string s = "{<>}";
+        //string s = "{{";
+        //string s = Console.ReadLine().Trim();
+        //string s = "()()[dddd333][333]333[}[333}{{3333]>";
+
+        string s = Console.ReadLine().Trim();
+        //string s = "[[}}";
+        Console.WriteLine(EvaluarParentesis(s));
+
+        //<> , () , {
+        //} , []
+
+        Console.ReadLine();
+
+    }
+
+}
+
+
+
