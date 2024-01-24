@@ -1,0 +1,22 @@
+#include<iostream>
+#include<stdio.h>
+#include <vector>
+#include <stdlib.h>
+
+#define ll long long int
+
+using namespace std;
+
+
+int main() {
+   
+    int a,b;
+    scanf("%d %d", &a, &b);
+    
+    printf("%d\n", abs(a + b));
+    
+    
+    system("pause");
+    
+ return 0;   
+}
