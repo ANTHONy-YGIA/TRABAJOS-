@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+/**
+ *
+ * @author Administrador
+ */
+public class Main {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        Scanner in = new Scanner(System.in);
+        while (in.hasNext()) {
+            /*int a = in.nextInt();
+            int b = in.nextInt();
+            System.out.println(a + b);*/
+            
+            String s = in.nextLine();
+            
+            System.out.println(s.toUpperCase());
+            System.out.println(s.toLowerCase());
+            
+        }
+    }
+}
