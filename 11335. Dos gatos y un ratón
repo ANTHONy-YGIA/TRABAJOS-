@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int posicionGatoA, posicionGatoB, posicionRatonC;
+
+    cout << "Ingrese la posición del gato A: ";
+    cin >> posicionGatoA;
+
+    cout << "Ingrese la posición del gato B: ";
+    cin >> posicionGatoB;
+
+    cout << "Ingrese la posición del ratón C: ";
+    cin >> posicionRatonC;
+
+    int distanciaGatoA = abs(posicionRatonC - posicionGatoA);
+    int distanciaGatoB = abs(posicionRatonC - posicionGatoB);
+
+    if (distanciaGatoA < distanciaGatoB) {
+        cout << "gato A" << endl;
+    } else if (distanciaGatoB < distanciaGatoA) {
+        cout << "gato B" << endl;
+    } else {
+        cout << "ratón C" << endl;
+    }
+
+    return 0;
+}
