@@ -1,0 +1,70 @@
+#include <iostream>
+#include <stdio.h>
+#include <vector>
+
+using namespace std;
+
+int min(int a)
+{
+    std::vector<int> digitos;
+
+    while (a > 0)
+    {
+        int dig = a % 10;
+        if (dig == 6)
+        {
+            digitos.push_back(5);
+        }
+        else
+        {
+            digitos.push_back(dig);
+        }
+        a /= 10;
+    }
+    int m = 0;
+    for (int i = 0; i < digitos.size(); i++)
+    {
+        m = (m * 10) + digitos[digitos.size() - 1 - i];
+    }
+
+    return m;
+}
+
+int max(int a)
+{
+    std::vector<int> digitos;
+    while (a > 0)
+    {
+        int dig = a % 10;
+        if (dig == 5)
+        {
+            digitos.push_back(6);
+        }
+        else
+        {
+            digitos.push_back(dig);
+        }
+        a /= 10;
+    }
+    int m = 0;
+    for (int i = 0; i < digitos.size(); i++)
+    {
+        m = (m * 10) + digitos[digitos.size() - 1 - i];
+    }
+    return m;
+}
+
+
+int main()
+{
+    int A, B;
+    
+    scanf("%d %d", &A, &B);
+
+    int minimiza = min(A) + min(B);
+    int maximiza = max(A) + max(B);
+
+	printf("%d %d", minimiza, maximiza );
+	
+    return 0;
+}
