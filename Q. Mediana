@@ -1,0 +1,59 @@
+#include <iostream>
+#include <stdio.h>
+#include <vector>
+#include <conio.h>
+
+using namespace std;
+
+int main() {
+    
+    int n;
+    scanf("%d",&n);
+    
+    std::vector<float> A;
+    for(int i =0; i< n; i++) {
+        float num;
+        //scanf("%f", &num);
+        cin >> num;
+        
+        A.push_back(num);   
+    }
+    
+    /*for(int i =0; i<n; i++) {
+            
+        printf("%.1f ", A[i]);
+    }*/
+        
+    
+    float mediana = 0;
+     /* ordeno el array para obtener la mediana */
+    
+    //std::sort(A.begin(), A.end());
+    
+    for(int i = 1; i < n; i++) {
+        
+        int index = i;
+        while(index > 0 && A[index] > A[index-1]) {
+           
+           float temp = A[index];
+           A[index ] = A[index -1];
+           A[index - 1] = temp; 
+            
+           index--;   
+        }   
+        
+    }
+    
+    
+    if(A.size() % 2 == 0) {
+        mediana = ( A[A.size()/2] + A[A.size()/2-1]  ) /2;
+    } else {
+        mediana = A[A.size()/2];
+    }
+    
+    printf("%.1f\n", mediana);
+    
+    getch();    
+
+  return 0;   
+}
