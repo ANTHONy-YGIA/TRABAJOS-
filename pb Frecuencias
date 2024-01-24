@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+using namespace std;
+
+int main() {
+    
+ int P, n;
+ scanf("%d %d",&P, &n );
+ 
+ int arr[n];
+ 
+ for(int i = 0; i < n; i++) {
+    scanf("%d",&arr[i]);       
+ }
+    
+  int frec[P];
+  for(int i = 0; i <= P; i++) {
+      frec[i] =0 ;   
+    }
+  
+  
+  for(int i = 0; i < n; i++) {
+     
+     frec[arr[i]]++;
+  }  
+    
+  for(int i = 1; i <= P; i++) {
+        
+      printf("%d-%d\n", i, frec[i]);        
+  }
+   
+ 
+// getch();   
+    
+ return 0;   
+}
