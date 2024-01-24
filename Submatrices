@@ -1,0 +1,86 @@
+#include <iostream>
+#include <stdio.h>
+ 
+using namespace std;
+ 
+ 
+int main() {
+ 
+   //-------------ENTRADA------------------
+   
+   int ren, col;
+   scanf("%d %d", &ren, &col);
+   
+   int n[ren][col];
+   
+   for(int i =0; i<ren; i++) {
+       for(int j=0; j<col; j++) {  
+          scanf("%d", &n[i][j]);
+       }
+    }
+   
+    int r,c;
+    scanf("%d %d", &r, &c);
+   
+    int m[r][c];
+   
+    for(int i =0; i<r; i++) {
+       for(int j =0; j<c; j++) {    
+          scanf("%d", &m[i][j]);
+        }
+    }
+   
+    //---------------------------------
+    int ans[ren][col];
+    for(int i =0; i<ren; i++)
+       for(int j =0; j<col; j++)
+           ans[i][j] = 0;
+       
+   
+   
+    for(int i =0; i < ren - r + 1; i++) {
+       for(int j =0; j<col - c + 1; j++) {
+         
+         bool iguales = true;  
+         for(int k=0; k < r && iguales; k++) {
+            for(int l=0; l<c && iguales; l++) {
+               if(n[i + k][j + l] != m[k][l]) {
+                  iguales = false;
+                  break;
+               }
+            }    
+          }
+          if(iguales) {
+              for(int k=i; k < i + r; k++) {
+                  for(int l = j; l < j + c; l++) {
+                        ans[k][l] = 1;
+                  }  
+              }  
+          }
+           
+       }
+    }
+   
+    for(int i =0; i<ren; i++) {
+      for(int j =0; j<col; j++) {
+         printf("%d ", ans[i][j]);      
+      }  
+      printf("\n");
+    }
+   
+   
+   
+    /*
+    for(int i =0; i<ren; i++) {
+      for(int j =0; j<col; j++) {
+          printf("%d ", n[i][j]);  
+      }  
+        printf("\n");
+    }*/
+   
+   
+   
+   system("pause");
+   
+ return 0;  
+}
