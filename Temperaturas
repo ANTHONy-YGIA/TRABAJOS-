@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <iostream>
+#include <vector>
+#include <map>
+
+#include <conio.h>
+
+using namespace std;
+
+int main() {
+    
+    int t;
+    scanf("%d", &t);
+    
+    if(t < 0) {
+        printf("Muy Frio\n");   
+    }else if(t >= 0 && t <= 10) {
+        printf("Frio\n");
+    }else if(t>= 11 && t <= 20) {
+        printf("Templado\n");
+    }else if(t >= 21 && t <= 25) {
+        printf("Calido\n");
+    }else{
+        printf("Muy Calido\n");  
+    }
+    
+    
+    getch();   
+    return 0;   
+ 
+}
