@@ -1,0 +1,42 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package javaapplication178;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Administrador
+ */
+public class JavaApplication178 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner sc = new Scanner(System.in);
+        int a,b,c;
+        String[] input = sc.nextLine().split(" ");
+        a = Integer.parseInt(input[0]);
+        b = Integer.parseInt(input[1]);
+        c = Integer.parseInt(input[2]);
+         int p[] = {a,b,c};
+
+         String ans = "NO CRASH";
+
+         for(int i =0; i<3; i++) {
+            if(p[i] <= 168) {
+               // printf("CRASH %d\n", p[i]);   
+               ans = "CRASH ";
+               ans +=  p[i];
+               break;
+            }   
+         }
+
+        System.out.println(ans);
+        
+    }
+}
