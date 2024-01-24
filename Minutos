@@ -1,0 +1,17 @@
+#include <iostream>
+#include <stdio.h>
+
+using namespace std;
+
+int main() {
+    
+   int min;
+   scanf("%d", &min);
+   
+   printf("%d", min * 60);
+  
+  
+    system("pause");
+    
+ return 0;   
+}
