@@ -1,0 +1,44 @@
+#include <iostream>
+#include <stdio.h>
+#include <vector>
+#include <algorithm>
+
+#include <conio.h>
+
+using namespace std;
+
+
+int main() {
+  
+  
+  //int a=1, b=8;
+  int a,b;
+  scanf("%d %d", &a, &b);
+
+    std::vector<int> nums; 
+    nums.push_back(a);
+    nums.push_back(b);
+    
+    int i;
+    for ( i = 2; ; i++)
+    {
+        nums.push_back((nums[i-1] + nums[i - 2]) % 10);
+    
+        if (nums[i - 1] == a && nums[i] == b)
+        {
+            break;
+        }
+    }
+    
+    
+    
+    for(int i =0; i < nums.size(); i++) {
+        printf("%d ", nums[i]);   
+    }
+    
+    printf("\n%d", i-1);
+    
+    getch();
+    
+    return 0;   
+}
