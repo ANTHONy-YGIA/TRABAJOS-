@@ -1,0 +1,26 @@
+#include <iostream>
+#include <stdio.h>
+
+#include <conio.h>
+
+using namespace std;
+
+
+int main() {
+    
+    
+    int edad;
+    scanf("%d", &edad);
+    
+    if(edad >= 18) {
+        printf("Es Mayor");   
+    }else {
+        printf("Es Menor");
+    }
+    
+    printf("\n");
+
+    getch();
+    
+    return 0;   
+}
