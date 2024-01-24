@@ -1,0 +1,23 @@
+#include <iostream>
+#include <stdio.h>
+
+#include <conio.h>
+
+using namespace std;
+
+int main() {
+    
+    int a;
+    scanf("%d",&a);
+    
+    if(a%2 ==0) {
+       printf("par");   
+    }else{
+       printf("impar");
+    }
+    printf("\n");
+    
+    getch();
+    
+    return 0;   
+}
