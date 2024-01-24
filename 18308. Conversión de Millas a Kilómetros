@@ -1,0 +1,10 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    float a,b,f;
+    cin >>a;
+    f=a*8/5;
+    cout<<f<<endl;
+ return 0;
+}
