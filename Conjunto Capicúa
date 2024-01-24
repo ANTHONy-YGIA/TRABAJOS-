@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+void esCapicua(int arr[], int n){
+	
+	int i = 0, j = n - 1;
+	while(i< j) {
+		
+		if(arr[i] != arr[j] ) {
+			printf("NO");
+			return;
+		}
+		
+		i++;
+		j--;
+	}
+	printf("SI");
+}
+
+int main() {
+	
+	int N;
+	scanf("%d",&N);
+	
+	int arr[N];
+	for(int i = 0; i < N; i++) {
+		scanf("%d",&arr[i]);
+	}
+	
+	esCapicua(arr, N);
+	
+	return 0;
+}
