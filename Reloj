@@ -1,0 +1,43 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package javaapplication92;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Administrador
+ */
+public class JavaApplication92 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        Scanner sc = new Scanner(System.in);
+        
+        String input = sc.nextLine();
+        
+        int h = Integer.parseInt(input.split(":")[0]);
+        int m = Integer.parseInt(input.split(":")[1]);
+        int s = Integer.parseInt(input.split(":")[2]);
+        
+         s++;
+            if(s >=60) {
+               s=0; 
+               m++;   
+            }
+            if(m >= 60) {
+                m=0;
+                h++;   
+            }
+            if(h >= 24) {
+                h=0;   
+            }
+        
+         //System.out.println( h + ":" + m + ":" + s);
+            System.out.printf("%02d:%02d:%02d", h,m,s);
