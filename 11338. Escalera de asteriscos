@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int main() {
+
+    int n,n1,n2;
+    cout<<"digite  un numero :";
+    cin>>n;
+    for (n1=1; n1 <= n; n1++){
+      for ( n2 = 0 ; n2 < n1; n2++)
+        cout<<"#";
+      cout<<"\n";  
+
+
+    }
+
+
+  return 0;
+}
