@@ -1,0 +1,32 @@
+#include <iostream>
+#include <stdio.h>
+#include <map>
+
+using namespace std;
+
+int main() {
+   
+   int p1,p2,p3,p4;
+   
+   scanf("%d %d %d %d", &p1, &p2, &p3, &p4);
+   
+   std::map<int, int> m;
+   
+   m[p1]++;
+   m[p2]++;
+   m[p3]++;
+   m[p4]++;
+   
+   int ans =0;
+   
+   for(std::map<int,int>::iterator it = m.begin() ; it != m.end(); it++) {
+      if(it->second == 3) {
+          ans = 1;
+             
+        }   
+    }
+    printf("%d\n", ans);
+    
+    system("pause");
+  return 0;   
+}
