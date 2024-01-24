@@ -1,0 +1,10 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    float a,b,c,d,e,f,g,M;
+    cin>>a>>b>>c>>d>>e>>f>>g;
+    M=(a+b+c+d+e+f+g)/7;
+    cout<<M<<endl;
+ return 0;
+}
