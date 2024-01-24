@@ -1,0 +1,79 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package javaapplication98;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Administrador
+ */
+public class JavaApplication98 {
+
+ 
+    
+    static String multiplicar(String a, String b)
+      {
+
+          StringBuffer C = new StringBuffer();
+          int next = 0;
+          for (int k = 0; k < a.length() + b.length() - 1; k++)
+          {
+              int cur = next;
+              int i, j;
+              if (k < a.length())
+              {
+                  i = a.length() - 1 - k;
+                  j = b.length() - 1;
+              }
+              else
+              {
+                  i = 0;
+                  j = a.length() + b.length() - 2 - k;
+              }
+              while (i < a.length() && j >= 0)
+              {
+
+                  cur += Integer.parseInt( String.valueOf(a.charAt(i))) 
+                          * Integer.parseInt(String.valueOf(b.charAt(j)) );
+                  i++;
+                  j--;
+              }
+
+
+              C = C.insert(0, String.valueOf(cur % 10));
+
+              next = cur / 10;
+
+          }
+          if (next > 0)
+          {
+              C = C.insert(0,String.valueOf( next));
+          }
+
+          return C.toString();
+      }
+
+     static String elevar(int N) {
+         
+         String prod = "1";
+         for(int i = 0; i < N; i++) {
+             prod = multiplicar(prod, "2");
+         }
+         return prod;
+     }
+    
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        Scanner sc = new Scanner(System.in);
+        int N;
+        N = Integer.parseInt(sc.nextLine());
+        String res = elevar(N);
+        
+        System.out.println(res);
+        
+    }
+}
