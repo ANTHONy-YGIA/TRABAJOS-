@@ -1,0 +1,51 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+//package javaapplication51;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Administrador
+ */
+public class Main {
+
+    /**
+     * @param args the command line arguments
+     */
+    
+    static int contar(String S, String target)
+        {
+            int cont = 0, i = 0;
+            while (i < S.length() - target.length() + 1)
+            {
+                if (S.charAt(i) == 'C' && S.substring(i, i + target.length()).equals(target))
+                {
+                    cont++;
+                    i += target.length();
+                }
+                else
+                {
+                    i++;
+                }
+            }
+
+            return cont;
+        }
+
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+         //String  s = "CodingRush2014    CodingRush2014 CodingRush2014             CodingRush2014";
+        Scanner teclado = new Scanner(System.in);
+         String s = teclado.nextLine() ;
+        
+         int cont = contar(s, "CodingRush2014");
+         
+          System.out.println(cont);
+        
+        
+    }
+}
