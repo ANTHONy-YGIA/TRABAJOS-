@@ -1,0 +1,30 @@
+#include <iostream>
+#include <stdio.h>
+#include <vector>
+
+using namespace std;
+
+int main() {
+    
+  std::vector<int> v;
+  int elem;
+  scanf("%d", &elem);
+  v.push_back(elem);
+  
+  int i;
+  for( i =0; ;i++) {
+     scanf("%d", &elem);
+     
+     if(elem < v[i]){
+        break;    
+     }else {
+          v.push_back(elem);     
+     }
+  }
+  
+  cout << (i + 1) << endl;
+  
+  system("pause");
+    
+ return 0;   
+}
