@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <cmath>
 using namespace std;
 
 int main()
@@ -8,22 +8,20 @@ int main()
 	cout<<"NOMBRE: ANTHONY JOEL LARICO VELASQUEZ "<<endl;
 	cout<<"CODIGO: 236561"<<endl;
 	cout<<"======================================================"<<endl;
-	cout<<"PARA HALLAR EL PROMEDIO DE LAS EDADES DE 5 PERSONAS"<<endl;
-	//Un programa para hallar el promedio de edades
-	//Declarar variables
-    float p1, p2, p3 ,p4, p5, promedio;
-    cout<<"Ingrese la edad de p1:";
-    cin>>p1;
-    cout<<"Ingrese la edad de p2:";
-    cin>>p2;
-    cout<<"Ingrese la edad de p3:";
-    cin>>p3;
-    cout<<"Ingrese la edad de p4:";
-    cin>>p4;
-    cout<<"Ingrese la edad de p5:";
-    cin>>p5;
-    //realizar promedio
-    promedio=(p1+p2+p3+p4+p5)/5;
-    cout<<"El promedio de las 5 personas es :"<<promedio<<endl;
+	cout<<"PARA RESOLVER LA  FORMULA GENERAL DE LAS ECUACIONES DE 2DO GRADO"<<endl;
+    //PROGRAMA PARA RESOLVER ECUACION DE 2DO GRADO
+    //DECLARAR VARIABLES
+    float a, b, c, x1, x2, raiz ;
+    cout<<"Introduzca la variavble a:";
+    cin>>a;
+    cout<<"Introduzca la variavble b:";
+    cin>>b;
+    cout<<"Introduzca la variavble c:";
+    cin>>c;
+    //OPERACION
+    raiz= sqrt(pow(b,2)-4*a*c);
+    x1=(-b + raiz)/(2 * a);
+    x2=(-b - raiz)/(2 * a);
+    cout<<" Las soluciones son :"<<x1<<"y"<<x2<<endl;
     return 0;
 }
