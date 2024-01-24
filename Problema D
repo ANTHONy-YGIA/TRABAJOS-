@@ -1,0 +1,87 @@
+#include <iostream>
+#include <stdio.h>
+#include <vector>
+ 
+using namespace std;
+ 
+int main() {
+   
+ 
+  int t;
+  scanf("%d", &t);
+ 
+  while(t--) {
+     
+      //------ENTRADA--------------------------------
+         int n;
+         scanf("%d", &n);
+         
+         string filas[n];
+         for(int i =0; i < n; i++) {
+            string f;
+            cin >> f;
+           
+            filas[i] = f;
+         }  
+     
+       //--------ALGORITMO------------------------------
+     
+        std::vector<int> sumfilas;
+        std::vector<int> sumcols;
+       
+        /*
+        para no repetir calculos y pasar varias veces por la matriz,
+        como los cortes son por filas y por columnas, es decir, se hace un solo corte sobre una fila,
+        o se hace un solo corte sobre una columna, entonces hago toda la sumatoria de veces que aparece #
+        de cada fila y la guardo en el vector sumfilas,
+        a su vez hago toda la sumatoria de las veces que aparece # en cada columna, y las guardo
+        en sumcols*/
+       
+        int totalcerezas =0;
+       
+        for(int i =0; i < n; i++) {
+           int sf =0, sc =0;
+           for(int j =0; j < n; j++) {  
+              if(filas[i][j] == '#') {
+                sf++;  
+                totalcerezas++;  
+              }
+              if(filas[j][i] == '#') {
+                sc++;      
+              }
+           }
+           sumfilas.push_back(sf);
+           sumcols.push_back(sc);
+        }    
+       
+        std::string ans = "NO";
+       
+       
+        /*
+        como ya tengo el total de cerezas, los voy restando por filas y por columnas,
+        en sum acumulo lo que hay hasta ahi de filas o de columnas, y le resto a totalcerezas
+        para saber cual es el resto, entonces si el resto es igual a sum es porque hay 2 lados
+        con la misma cantidad de cerezas
+        */
+       
+       
+        int sumporfila=0, sumporcol=0;
+        for(int i =0; i<n; i++) {
+           sumporfila += sumfilas[i];
+           sumporcol += sumcols[i];
+           if(totalcerezas - sumporfila == sumporfila || totalcerezas - sumporcol == sumporcol) {
+               ans = "YES";
+               break;  
+            }    
+           
+        }
+       
+        cout << ans << endl;
+ 
+  }
+ 
+ 
+  //  system("pause");
+   
+ return 0;  
+}
