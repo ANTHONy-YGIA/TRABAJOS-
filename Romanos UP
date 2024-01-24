@@ -1,0 +1,17 @@
+#include <iostream>
+#include <stdio.h>
+
+using namespace std;
+
+int main() {
+    
+    std::string rom[] = { "I","II","III","IV","V","VI","VII","VIII","IX","X" };
+    int n;
+    scanf("%d", &n);
+    
+    cout << rom[n-1] << endl;
+    
+    system("pause");
+    
+ return 0;   
+}
