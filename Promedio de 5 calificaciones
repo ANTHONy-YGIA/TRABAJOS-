@@ -1,0 +1,24 @@
+#include <iostream>
+#include <stdio.h>
+
+#include <conio.h>
+
+using namespace std;
+
+
+int main() {
+    
+   
+    float sum = 0;
+    for(int i =0; i<5; i++) {
+      float elem;
+      scanf("%f", &elem);
+      sum += elem;  
+    }
+    
+    printf("%.1f", sum/5);
+    
+    getch();
+    return 0;   
+}
+
