@@ -1,0 +1,30 @@
+﻿#include <stdio.h>
+
+
+int main() {
+	
+	/*
+	 cuento los anteriores al elemento, los que van a la izquierda (menores), entonces 
+	 me queda la posicion donde le corresponde al elemento
+	*/
+	int N;
+	scanf("%d", &N);
+	
+	int anteriores = 0;
+	//int arr[N];
+	int primero;
+	scanf("%d", &primero) ;
+	
+	for(int i = 1; i < N; i++) {
+		int elem ;
+		scanf("%d", &elem);
+		if(elem < primero) {
+			anteriores++;
+		}
+		
+	}
+
+	 
+	printf("%d", anteriores);
+	return 0;
+}
