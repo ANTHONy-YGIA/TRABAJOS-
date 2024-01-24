@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <iostream>
+#include <vector>
+#include <map>
+
+#include <conio.h>
+
+using namespace std;
+
+int main() {
+    
+    int N, M;
+    scanf("%d", &N);
+    std::map<int,string> m;
+    
+    m[1] = "Enero";
+    m[2] = "Febrero";
+    m[3] = "Marzo";
+    m[4] = "Abril";
+    m[5] = "Mayo";
+    m[6] = "Junio";
+    m[7] = "Julio";
+    m[8] = "Agosto";
+    m[9] = "Septiembre";
+    m[10] = "Octubre";
+    m[11] = "Noviembre";
+    m[12] = "Diciembre";
+    
+    while( N  --) {
+    
+        scanf("%d", &M);
+        
+        if(M < 1 || M > 12) {
+            printf("Error\n");   
+        } else {
+            cout << m[M] << endl;   
+        }
+    
+    }
+    
+ 
+   getch();   
+ return 0;   
+ 
+}
