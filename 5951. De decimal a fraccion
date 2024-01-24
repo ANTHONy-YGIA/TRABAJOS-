@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+
+
+int main() {
+    float a,b,g,f;
+    cin>>a>>b;
+    f=(a*100);
+    g=(b*100);
+    cout<<f<<"/"<<g<<endl;
+ return 0;
+}
