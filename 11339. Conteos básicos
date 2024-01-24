@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int numeroA, numeroB;
+
+    cout << "Ingrese el número inicial (A): ";
+    cin >> numeroA;
+
+    cout << "Ingrese el número final (B): ";
+    cin >> numeroB;
+
+    if (numeroA <= numeroB) {
+        for (int i = numeroA; i <= numeroB; i++) {
+            cout << i << " ";
+        }
+    } else {
+        for (int i = numeroA; i >= numeroB; i--) {
+            cout << i << " ";
+        }
+    }
+
+    cout << endl;
+
+    return 0;
+}
