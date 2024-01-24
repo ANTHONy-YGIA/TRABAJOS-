@@ -1,0 +1,121 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp180
+{
+    class Program
+    {
+
+
+        public static  int[,] GenerateMatrix(int n, int m)
+        {
+            int[,] ans = new int[n,m];
+
+            int top_derecha = m - 1;
+            int top_abajo = n - 1;
+            int top_izquierda = 0;
+            int top_arriba = 0;
+
+
+            int cont = 1;
+            //for (int x = 0; x < m; x++)
+            for(int x =0;   ; x++ )
+            {
+
+                //de derecha a izquierda
+                for (int i = top_izquierda; i <= top_derecha; i++)
+                {
+                    ans[top_arriba,i] = cont++;
+                }
+                top_arriba++;
+
+                if( cont > n*m)
+                {
+                    break;
+                }
+
+
+                //de arriba a abajo
+                for (int i = top_arriba; i <= top_abajo; i++)
+                {
+                    ans[i,top_derecha] = cont++;
+                }
+
+                top_derecha--;
+
+                if (cont > n * m)
+                {
+                    break;
+                }
+
+
+
+                //de derecha a izquierda
+                for (int i = top_derecha; i >= top_izquierda; i--)
+                {
+                    ans[top_abajo,i] = cont++;
+                }
+
+                top_abajo--;
+
+                if (cont > n * m)
+                {
+                    break;
+                }
+
+
+
+                //de abajo a arriba
+                for (int i = top_abajo; i >= top_arriba; i--)
+                {
+                    ans[i,top_izquierda] = cont++;
+                }
+                top_izquierda++;
+
+                if (cont > n * m)
+                {
+                    break;
+                }
+
+
+            }
+
+            return ans;
+        }
+
+
+        static void MostrarMatrizEspiral(int filas, int columnas)
+        {
+
+            int[,] matriz = GenerateMatrix(filas, columnas);
+
+            for(int i =0; i<filas; i++)
+            {
+                for(int j =0; j<columnas; j++)
+                {
+                    Console.Write(matriz[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+             
+
+
+        }
+
+
+        static void Main(string[] args)
+        {
+
+            string[] input = Console.ReadLine().Trim().Split(' ');
+            int filas = int.Parse(input.First());
+            int cols = int.Parse(input.Last());
+
+            MostrarMatrizEspiral(filas, cols);
+
+            Console.ReadLine();
+        }
+    }
+}
