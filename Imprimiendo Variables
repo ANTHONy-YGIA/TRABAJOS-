@@ -1,0 +1,18 @@
+#include <iostream>
+#include <stdio.h>
+
+#include <conio.h>
+
+using namespace std;
+
+int main() {
+    
+    int i = 10;
+    float j = 3.1416;
+    
+    printf("%d %.4f", i,j);
+    
+    getch();
+    
+    return 0;   
+}
