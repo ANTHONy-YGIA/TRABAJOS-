@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+int gcdEuclid(int a, int b)  {
+	if(a == 0) return b;
+	return gcdEuclid(b%a, a);
+}
+
+int main() {
+    
+    int m, n;
+    scanf("%d %d", &m, &n);
+    
+    int res = gcdEuclid(m,n);
+    
+    printf("%d",res);
+    
+    
+    getch();
+ return 0;   
+}
