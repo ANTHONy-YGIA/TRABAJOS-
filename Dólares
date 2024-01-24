@@ -1,0 +1,20 @@
+#include <iostream>
+#include <stdio.h>
+
+#include <conio.h>
+
+using namespace std;
+
+int main() {
+    
+    int N, K;
+    
+    scanf("%d %d", &N, &K);
+    
+    printf("%d\n" , N * K);
+    
+    
+    getch();
+    
+    return 0;   
+}
