@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int edad;
+
+    cout << "Ingrese una edad: ";
+    cin >> edad;
+
+    if (edad >= 0 && edad <= 3) {
+        cout << "La edad corresponde a un bebé." << endl;
+    } else if (edad >= 4 && edad <= 14) {
+        cout << "La edad corresponde a un niño." << endl;
+    } else if (edad >= 15 && edad <= 18) {
+        cout << "La edad corresponde a un joven." << endl;
+    } else if (edad >= 19 && edad <= 65) {
+        cout << "La edad corresponde a un adulto." << endl;
+    } else if (edad >= 65) {
+        cout << "La edad corresponde a un adulto de la tercera edad." << endl;
+    } else {
+        cout << "La edad ingresada es inválida." << endl;
+    }
+
+    return 0;
+}
