@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <iostream>
+#include <vector>
+#include <map>
+
+#include <conio.h>
+
+using namespace std;
+
+int main() {
+    
+    int N;
+    scanf("%d", &N);
+    
+    int tablas[N];
+    
+    for(int i = 0; i < N; i++) {
+        scanf("%d", &tablas[i]);   
+    }
+    
+    for(int i = 0; i < N; i++) {
+        int t = tablas[i];    
+            
+        for(int j = 1; j <= 10; j++) {
+            printf("%dx%d=%d\n",t,j, t*j);
+        }
+        printf("\n");
+        
+    }
+ 
+    getch();   
+    return 0;   
+ 
+}
