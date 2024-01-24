@@ -1,0 +1,38 @@
+#include <iostream>
+#include <stdio.h>
+#include <math.h>
+#include <algorithm>
+
+#define ll long long int
+
+using namespace std;
+
+int main() {
+    
+   int n;
+   scanf("%d", &n);
+   
+   int arr[n];
+   for(int i =0; i<n; i++) {
+       scanf("%d", &arr[i]); 
+   }
+   
+   std::sort(arr, arr + n);
+   std::reverse(arr, arr + n);
+   
+   int ans =-1;
+   
+   for(int i =0; i<n-2; i++) {
+
+      if(  arr[i] < arr[i+1] + arr[i+2]){
+           ans =  arr[i] + arr[i+1] + arr[i+2];
+           break;
+        } 
+   }
+   
+   printf("%d\n", ans);
+   
+   system("pause");
+    
+ return 0;   
+}
