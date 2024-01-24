@@ -1,0 +1,27 @@
+#include <iostream>
+#include <stdio.h>
+#include  <vector>
+
+#define ll long long int
+
+using namespace std;
+
+int main() {
+    
+    int total =0, cont = 0 ;
+    int gasto;
+    scanf("%d", &gasto);
+    
+    
+    while(gasto != 0) {
+       total += gasto;
+       cont ++;
+       scanf("%d", &gasto);
+    }
+    
+    printf("%d %d", total, cont);
+   
+    system("pause");
+    
+ return 0;   
+}
