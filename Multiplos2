@@ -1,0 +1,35 @@
+include <stdio.h>
+#include <vector>
+
+int main() {
+	
+	int N;
+	scanf("%d",&N);
+	int arr[N];
+	for(int i = 0; i < N; i++) {
+		scanf("%d",&arr[i]);
+	}
+	
+	std::vector<int> mult2;
+	for(int i = 0; i < N; i++) {
+		if(arr[i] % 2 == 0) {
+			mult2.push_back(arr[i]);
+		}
+	}
+	
+	for(int i = 1; i < mult2.size(); i++) {
+		int indice = i;
+		while(indice > 0 && mult2[indice] < mult2[indice - 1]) {
+			int temp = mult2[indice];
+			mult2[indice] = mult2[indice - 1];
+			mult2[indice - 1] = temp;
+			indice --;
+		}
+	}
+	
+	for(int i = 0; i < mult2.size(); i++) {
+		printf("%d ",mult2[i]);
+	}
+	
+	return 0;
+}
