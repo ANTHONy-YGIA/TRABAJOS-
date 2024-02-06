@@ -1,0 +1,10 @@
+#include <iostream>
+using namespace std;
+int main() {
+  int a,b,M;
+  cin>>a>>b;
+  M=a*b;
+  cout<<""<<M<<endl;
+
+  return 0;
+}
